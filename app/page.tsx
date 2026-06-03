@@ -111,7 +111,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Empreiteira Mariano e Cia">
           <img
-            src="/assets/Mariano-Cia-Proposta-de-Logo-2-1024x221.png"
+            src="/logo-mariano.png"
             alt="Empreiteira Mariano e Cia"
           />
         </a>
