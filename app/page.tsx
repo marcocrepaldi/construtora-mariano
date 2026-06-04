@@ -130,20 +130,14 @@ export default function Home() {
 
         <div className="social">
           <a
-            href="https://www.instagram.com/empreteiramarianoecia"
+            href="https://www.instagram.com/construtoramarianoecia"
             aria-label="Instagram"
             target="_blank"
             rel="noreferrer"
           >
-            ◎
-          </a>
-          <a
-            href="https://www.facebook.com/empreiteiramarianoecia"
-            aria-label="Facebook"
-            target="_blank"
-            rel="noreferrer"
-          >
-            f
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+              <path d="M7.9 2h8.2A5.9 5.9 0 0 1 22 7.9v8.2a5.9 5.9 0 0 1-5.9 5.9H7.9A5.9 5.9 0 0 1 2 16.1V7.9A5.9 5.9 0 0 1 7.9 2Zm0 2A3.9 3.9 0 0 0 4 7.9v8.2A3.9 3.9 0 0 0 7.9 20h8.2a3.9 3.9 0 0 0 3.9-3.9V7.9A3.9 3.9 0 0 0 16.1 4H7.9Zm8.6 2.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 2a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z" />
+            </svg>
           </a>
         </div>
 
@@ -293,11 +287,11 @@ export default function Home() {
                 <h3>Instagram</h3>
                 <p>
                   <a
-                    href="https://www.instagram.com/empreteiramarianoecia"
+                    href="https://www.instagram.com/construtoramarianoecia"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    /empreteiramarianoecia
+                    /construtoramarianoecia
                   </a>
                 </p>
               </article>
@@ -319,6 +313,18 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <a
+        className="whatsapp-float"
+        href="https://wa.me/5511981321663?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+        aria-label="Conversar pelo WhatsApp"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+          <path d="M16.04 3.5c-6.87 0-12.46 5.48-12.46 12.22 0 2.15.58 4.25 1.68 6.09L3.5 28.5l6.92-1.74a12.67 12.67 0 0 0 5.62 1.31c6.87 0 12.46-5.48 12.46-12.22S22.91 3.5 16.04 3.5Zm0 22.49c-1.82 0-3.6-.47-5.15-1.36l-.37-.22-4.11 1.04 1.09-3.92-.25-.4a10 10 0 0 1-1.58-5.41c0-5.59 4.65-10.14 10.37-10.14s10.37 4.55 10.37 10.14-4.65 10.27-10.37 10.27Zm5.68-7.69c-.31-.15-1.84-.89-2.12-.99-.28-.1-.49-.15-.7.15-.2.3-.8.99-.98 1.19-.18.2-.36.22-.67.07-.31-.15-1.31-.47-2.49-1.51-.92-.8-1.54-1.79-1.72-2.09-.18-.3-.02-.46.14-.61.14-.14.31-.36.47-.53.16-.18.2-.3.31-.5.1-.2.05-.37-.03-.52-.08-.15-.7-1.65-.95-2.26-.25-.59-.51-.51-.7-.52h-.6c-.2 0-.52.07-.8.37-.28.3-1.05 1.01-1.05 2.46 0 1.45 1.08 2.86 1.23 3.06.15.2 2.13 3.2 5.16 4.49.72.31 1.28.49 1.72.63.72.22 1.38.19 1.9.12.58-.08 1.84-.74 2.1-1.45.26-.72.26-1.33.18-1.45-.08-.13-.28-.2-.59-.35Z" />
+        </svg>
+      </a>
     </>
   );
 }

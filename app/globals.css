@@ -115,6 +115,12 @@ img {
   font-weight: 700;
 }
 
+.social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .menu-toggle {
   display: none;
   width: 44px;
@@ -533,6 +539,43 @@ h2 {
   cursor: pointer;
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.whatsapp-float::before {
+  position: absolute;
+  inset: -7px;
+  border: 2px solid rgba(37, 211, 102, .28);
+  border-radius: 50%;
+  content: "";
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  background: #1fbd5a;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .28);
+  transform: translateY(-3px);
+}
+
+.whatsapp-float svg {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -668,6 +711,18 @@ h2 {
   .contact-form {
     grid-template-columns: 1fr;
     padding: 30px;
+  }
+
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
