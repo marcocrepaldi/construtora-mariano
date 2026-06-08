@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.empreiteiramarianoecia.com.br"),
-  title: "Empreiteira Mariano e Cia",
+  metadataBase: new URL("https://www.construtoramariano.com.br"),
+  title: "Mariano Construtora & Engenharia | Obras de Alto Padrão",
   description:
-    "Elaboração de projetos, execução de obras e infraestrutura, reformas em geral, pinturas residenciais, orçamentos e planejamento e muito mais.",
+    "Especialistas na execução de obras de grande porte, reformas residenciais de luxo, retrofits comerciais, engenharia de custos e elaboração de projetos executivos em São Paulo.",
   icons: {
     icon: "/assets/cropped-favicon-32x32.png",
   },
   openGraph: {
-    title: "Empreiteira Mariano e Cia",
+    title: "Mariano Construtora & Engenharia | Obras de Alto Padrão e Grande Porte",
     description:
-      "Elaboração de projetos, execução de obras e infraestrutura, reformas em geral, pinturas residenciais, orçamentos e planejamento e muito mais.",
+      "Construção civil premium e gerenciamento de obras de grande porte acima de R$ 500 mil. Projetos turnkey com controle tecnológico e rigor de engenharia.",
     images: ["/assets/foto-sobre.jpg"],
     locale: "pt_BR",
     type: "website",

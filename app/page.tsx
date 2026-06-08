@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 
 const slides = ["slide-4.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"];
 
@@ -18,34 +19,66 @@ const valueItems = [
     image: "icon-missao.png",
     title: "Missão",
     description:
-      "Garantir segurança, satisfação e tranquilidade e melhor custo e benefício para seus clientes.",
+      "Garantir máxima segurança estrutural, previsibilidade de custos e excelência executiva, superando as expectativas em cada projeto de alta complexidade.",
   },
   {
     image: "icon-visao.png",
     title: "Visão",
     description:
-      "Ser a maior empresa da cidade de São Paulo em qualidade na prestação de serviços para sua residência, comércio, condomínio.",
+      "Consolidar-se como a principal construtora de alto padrão e engenharia estrutural do estado de São Paulo, reconhecida por obras monumentais e sustentáveis.",
   },
   {
     image: "icon-valores.png",
     title: "Valores",
     description:
-      "Comprometimento - Estar conectado com as necessidades e objetivos de nossos clientes para alcançar a excelência e servir sempre o melhor;\nRespeito - Respeitar as pessoas\ne suas diferenças;\nHonestidade - Agir com transparência,\nser verdadeiro em suas palavras, atos e valores;\nHumildade - Ouvir, aprender\ne reconhecer erros;",
+      "Comprometimento técnico - Buscar a precisão em cada centímetro construído;\nRespeito e Ética - Relações transparentes com investidores, parceiros e colaboradores;\nPrevisibilidade Financeira - Planejamento rigoroso com desvio orçamentário zero;\nSegurança - Rigor absoluto nas normas técnicas de engenharia (ABNT/NRs).",
   },
 ];
 
-const services = [
-  ["project", "Elaboração de projetos"],
-  ["infra", "Execução de obras\ne infraestrutura"],
-  ["reform", "Reformas em geral"],
-  [
-    "paint",
-    "Pinturas residenciais, comerciais, condominiais, assim como pinturas de fachada",
-  ],
-  ["plan", "Orçamentos e planejamento"],
-  ["metal", "Serviços em geral de serralheria"],
-  ["floor", "Pisos e revestimento industriais"],
-] as const;
+const homeServices = [
+  {
+    slug: "elaboracao-de-projetos",
+    icon: "project",
+    title: "Elaboração de Projetos Executivos",
+    summary: "Arquitetura e engenharias integradas em BIM. Eliminamos incompatibilidades no digital para garantir uma execução física sem atrasos ou surpresas financeiras."
+  },
+  {
+    slug: "execucao-de-obras",
+    icon: "infra",
+    title: "Execução de Obras & Infraestrutura",
+    summary: "Gerenciamento completo (Turnkey) de edificações residenciais de luxo e galpões comerciais de grande porte, com controle tecnológico rigoroso."
+  },
+  {
+    slug: "reformas-em-geral",
+    icon: "reform",
+    title: "Reformas de Alto Padrão & Retrofit",
+    summary: "Modernização estrutural e estética de alto nível para residências de luxo e sedes corporativas, unindo agilidade de cronograma e acabamento impecável."
+  },
+  {
+    slug: "pintura-e-fachadas",
+    icon: "paint",
+    title: "Pinturas Premium & Fachadas",
+    summary: "Impermeabilização técnica e pintura de alto desempenho para fachadas comerciais, condomínios verticais e residências de alto valor."
+  },
+  {
+    slug: "orcamentos-e-planejamento",
+    icon: "plan",
+    title: "Orçamentos e Planejamento",
+    summary: "Engenharia de custos analítica. Planejamos a evolução física e financeira de sua obra para assegurar conformidade de orçamento do início ao fim."
+  },
+  {
+    slug: "serralheria",
+    icon: "metal",
+    title: "Serralheria Artística & Estrutural",
+    summary: "Estruturas metálicas de grande porte, mezaninos industriais robustos e serralheria fina de design sob medida com alta durabilidade."
+  },
+  {
+    slug: "pisos-e-revestimentos",
+    icon: "floor",
+    title: "Pisos e Revestimentos Industriais",
+    summary: "Pisos de concreto polido e aplicação técnica de revestimentos monolíticos em Epóxi e Poliuretano (PU) para alta capacidade de tráfego."
+  }
+];
 
 const galleryRows = [
   [
@@ -92,29 +125,32 @@ export default function Home() {
 
     const data = new FormData(event.currentTarget);
     const message = [
-      "Olá, gostaria de solicitar um orçamento.",
-      `Nome: ${data.get("nome") || ""}`,
-      `Email: ${data.get("email") || ""}`,
-      `WhatsApp: ${data.get("whatsapp") || ""}`,
-      `Cidade: ${data.get("cidade") || ""}`,
+      "Olá Construtora Mariano! Gostaria de solicitar um orçamento para um projeto de grande porte.",
+      "",
+      `*Nome:* ${data.get("nome") || ""}`,
+      `*Email:* ${data.get("email") || ""}`,
+      `*WhatsApp:* ${data.get("whatsapp") || ""}`,
+      `*Cidade:* ${data.get("cidade") || ""}`,
+      "",
+      "Estou interessado em receber atendimento premium e consultoria para viabilizar minha obra."
     ].join("\n");
 
     window.open(
       `https://wa.me/5511981321663?text=${encodeURIComponent(message)}`,
       "_blank",
-      "noopener",
+      "noopener,noreferrer"
     );
   }
 
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Empreiteira Mariano e Cia">
+        <Link className="brand" href="#inicio" aria-label="Construtora Mariano">
           <img
             src="/logo-mariano.png"
-            alt="Empreiteira Mariano e Cia"
+            alt="Construtora Mariano"
           />
-        </a>
+        </Link>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`} id="nav">
           {navItems.map(([item, href]) => (
@@ -156,7 +192,8 @@ export default function Home() {
       </header>
 
       <main>
-        <section id="inicio" className="hero" aria-label="Obras e reformas">
+        {/* Slider Hero with Text Overlay */}
+        <section id="inicio" className="hero" aria-label="Obras e reformas de alto padrão">
           <div className="slides">
             {slides.map((slide, index) => (
               <img
@@ -167,93 +204,115 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
-
-        <section className="section instagram">
-          <h2>Veja mais em nosso Instagram</h2>
-          <div className="instagram-strip" aria-hidden="true">
-            {instagramImages.map((image) => (
-              <img src={`/assets/${image}`} alt="" key={image} />
-            ))}
-          </div>
-        </section>
-
-        <section id="sobre" className="section about">
-          <div className="container about-text">
-            <div>
-              <h2>SOBRE</h2>
-              <p>
-                A MARIANO E CIA é uma empresa, cujo seus representantes atuam há
-                mais de 15 anos no mercado, no segmento de REFORMAS EM GERAL,
-                residencial, comercial e predial, visando sempre atendê-lo com
-                qualidade e rapidez.
-              </p>
-              <p>
-                • Nossa Empresa segue os conceitos da mais alta qualidade em
-                prestação de serviços, possuindo uma estrutura solida com
-                profissionais altamente capacitados e treinados.
-              </p>
+          <div className="hero-content-overlay">
+            <span className="premium-badge">Construção Civil & Engenharia</span>
+            <h1>Construindo Ideias com <span>Rigor e Sofisticação</span></h1>
+            <p>Especialistas em projetos executivos e execução de obras corporativas e residenciais de alto padrão e grande porte.</p>
+            <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="#servicos" className="btn-primary">Nossos Serviços</a>
+              <a href="#contato" className="btn-gold-outline">Falar com Engenheiro</a>
             </div>
           </div>
-          <div className="about-photo">
-            <img src="/assets/foto-sobre.jpg" alt="Equipe Mariano e Cia em obra" />
-          </div>
         </section>
 
-        <section className="section values">
-          <div className="container value-grid">
-            {valueItems.map((item) => (
-              <article key={item.title}>
-                <img src={`/assets/${item.image}`} alt="" />
-                <h3>{item.title}</h3>
-                <p>
-                  {item.description.split("\n").map((line, index) => (
-                    <span key={`${item.title}-${index}`}>
-                      {line}
-                      {index < item.description.split("\n").length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="servicos" className="section services">
+        {/* Instagram Gallery strip */}
+        <section className="section instagram">
+          <h2>Conecte-se ao nosso dia a dia no Instagram</h2>
           <div className="container">
-            <h2>SERVIÇOS</h2>
-            <div className="service-grid">
-              {services.map(([icon, title]) => (
-                <article key={title}>
-                  <span className={`service-icon ${icon}`} />
-                  <h3>
-                    {title.split("\n").map((line, index) => (
-                      <span key={`${title}-${index}`}>
+            <div className="instagram-strip" aria-hidden="true">
+              {instagramImages.map((image) => (
+                <img src={`/assets/${image}`} alt="" key={image} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Re-designed About Section */}
+        <section id="sobre" className="section about">
+          <div className="container about-grid">
+            <div>
+              <span className="premium-badge">15+ Anos de História</span>
+              <h2>MARIANO CONSTRUTORA & ENGENHARIA</h2>
+              <p>
+                Com mais de 15 anos de atuação sólida no mercado, a <strong>Mariano Construtora & Engenharia</strong> consolidou-se como referência no segmento de execução de obras de médio e grande porte, além de reformas de alto padrão comerciais e corporativas.
+              </p>
+              <p>
+                Nossa filosofia operacional baseia-se em rigor técnico absoluto de engenharia, planejamento financeiro com desvio zero de custos, e cumprimento rigoroso de prazos. Contamos com um corpo técnico de engenheiros civis especializados e mão de obra própria constantemente qualificada, garantindo a solidez e sofisticação que o seu patrimônio merece.
+              </p>
+              <a href="#contato" className="btn-gold-outline">Conheça Nossa Equipe</a>
+            </div>
+            <div className="about-photo-wrapper">
+              <div className="about-photo">
+                <img src="/assets/foto-sobre.jpg" alt="Equipe Mariano e Cia em obra de alto padrão" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="section values">
+          <div className="container">
+            <div className="value-grid">
+              {valueItems.map((item) => (
+                <article key={item.title}>
+                  <img src={`/assets/${item.image}`} alt={item.title} />
+                  <h3>{item.title}</h3>
+                  <p>
+                    {item.description.split("\n").map((line, index) => (
+                      <span key={`${item.title}-${index}`}>
                         {line}
-                        {index < title.split("\n").length - 1 && <br />}
+                        {index < item.description.split("\n").length - 1 && <br />}
                       </span>
                     ))}
-                  </h3>
+                  </p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="galeria" className="section gallery">
-          <h2>GALERIA</h2>
-          {galleryRows.map((row) => (
-            <div className="gallery-band" key={row.join("-")}>
-              {row.map((image) => (
-                <img src={`/assets/${image}`} alt="" key={image} />
+        {/* Redesigned Services section linking to Landing Pages */}
+        <section id="servicos" className="section services">
+          <div className="container">
+            <h2>Nossos Serviços de Alto Padrão</h2>
+            <p className="section-subtitle">Soluções completas sob a coordenação de engenheiros residentes para assegurar a perfeição dos detalhes</p>
+            
+            <div className="service-grid">
+              {homeServices.map((service) => (
+                <article key={service.slug}>
+                  <span className={`service-icon ${service.icon}`} />
+                  <h3>{service.title}</h3>
+                  <p className="service-summary">{service.summary}</p>
+                  <Link href={`/servicos/${service.slug}`} className="btn-gold-outline btn-block">
+                    Ver Landing Page do Serviço
+                  </Link>
+                </article>
               ))}
             </div>
-          ))}
+          </div>
         </section>
 
+        {/* Portfolio Gallery */}
+        <section id="galeria" className="section gallery">
+          <div className="container">
+            <h2>Nosso Portfólio de Obras</h2>
+            <p className="section-subtitle">Visualização de acabamentos finos e execuções estruturais em São Paulo e região</p>
+            {galleryRows.map((row, index) => (
+              <div className="gallery-band" key={index}>
+                {row.map((image) => (
+                  <img src={`/assets/${image}`} alt="Registro de obra Construtora Mariano" key={image} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
         <section id="contato" className="section contact">
           <div className="container">
             <h2>ENTRE EM CONTATO</h2>
+            <p className="section-subtitle">Solicite um estudo de viabilidade técnica e orçamento para o seu projeto</p>
+            
             <div className="contact-grid">
               <article>
                 <span className="contact-icon">✉</span>
@@ -266,7 +325,7 @@ export default function Home() {
               </article>
               <article>
                 <span className="contact-icon">⌂</span>
-                <h3>Endereço</h3>
+                <h3>Sede</h3>
                 <p>
                   R. Aguanos, 250 - Jaguaré
                   <br />
@@ -299,24 +358,51 @@ export default function Home() {
 
             <p className="form-title">Ou preencha o formulário de contato abaixo:</p>
             <form className="contact-form" onSubmit={handleSubmit}>
-              <input type="text" name="nome" placeholder="Nome" aria-label="Nome" />
-              <input type="email" name="email" placeholder="Email" aria-label="Email" />
+              <input type="text" name="nome" placeholder="Seu Nome Completo" aria-label="Nome" required />
+              <input type="email" name="email" placeholder="E-mail de Contato" aria-label="Email" required />
               <input
                 type="tel"
                 name="whatsapp"
-                placeholder="WhatsApp"
+                placeholder="WhatsApp com DDD"
                 aria-label="WhatsApp"
+                required
               />
-              <input type="text" name="cidade" placeholder="Cidade" aria-label="Cidade" />
-              <button type="submit">Enviar</button>
+              <input type="text" name="cidade" placeholder="Cidade da Obra" aria-label="Cidade" required />
+              <button type="submit" className="btn-primary">Enviar Mensagem e iniciar conversa</button>
             </form>
           </div>
         </section>
       </main>
 
+      <footer className="site-footer">
+        <div className="container footer-content">
+          <div className="footer-brand">
+            <img src="/logo-mariano.png" alt="Logo Construtora Mariano" />
+            <p>Construções civis premium, planejamento orçamentário analítico e reformas corporativas de alta complexidade.</p>
+          </div>
+          <div className="footer-links">
+            <h4>Navegação</h4>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#galeria">Galeria</a>
+          </div>
+          <div className="footer-social-section">
+            <h4>Redes Sociais</h4>
+            <a href="https://www.instagram.com/construtoramarianoecia" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <div className="container">
+            <p>&copy; {new Date().getFullYear()} Mariano Construtora & Engenharia. Todos os direitos reservados. CNPJ: 28.583.565/0001-38</p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Floating WhatsApp Button */}
       <a
         className="whatsapp-float"
-        href="https://wa.me/5511981321663?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+        href="https://wa.me/5511981321663?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20grande%20porte."
         aria-label="Conversar pelo WhatsApp"
         target="_blank"
         rel="noreferrer"
