@@ -3,7 +3,14 @@
 import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 
-const slides = ["slide-4.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"];
+const slides = [
+  "slide-4.jpg",
+  "slide-3.jpg",
+  "slide-2.jpg",
+  "slide-1.jpg",
+  "construcaoeobras.jpg",
+  "decoracao.jpg",
+];
 
 const instagramImages = [
   "img-galeria-.jpg",
@@ -12,6 +19,8 @@ const instagramImages = [
   "img-galeria-4.jpg",
   "img-galeria-5.jpg",
   "img-galeria-6-1.jpg",
+  "construcaoeobras.jpg",
+  "decoracao.jpg",
 ];
 
 const valueItems = [
@@ -98,6 +107,10 @@ const galleryRows = [
     "img-galeria-casa-no-mato-grosso.jpg",
     "img-galeria-predio-5-andares.jpg",
     "img-galeria-serra-da-cantaneira.jpg",
+  ],
+  [
+    "construcaoeobras.jpg",
+    "decoracao.jpg",
   ],
 ];
 
@@ -205,9 +218,8 @@ export default function Home() {
             ))}
           </div>
           <div className="hero-content-overlay">
-            <span className="premium-badge">Construção Civil & Engenharia</span>
-            <h1>Construindo Ideias com <span>Rigor e Sofisticação</span></h1>
-            <p>Especialistas em projetos executivos e execução de obras corporativas e residenciais de alto padrão e grande porte.</p>
+            <h1>Construtora Premium em São Paulo para <span>Obras de Alto Padrão</span></h1>
+            <p>Especialistas em projetos executivos, execução de obras corporativas e residenciais de alto padrão, reformas premium em São Paulo e engenharia de custos com precisão.</p>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
               <a href="#servicos" className="btn-primary">Nossos Serviços</a>
               <a href="#contato" className="btn-gold-outline">Falar com Engenheiro</a>
@@ -234,7 +246,7 @@ export default function Home() {
               <span className="premium-badge">15+ Anos de História</span>
               <h2>MARIANO CONSTRUTORA & ENGENHARIA</h2>
               <p>
-                Com mais de 15 anos de atuação sólida no mercado, a <strong>Mariano Construtora & Engenharia</strong> consolidou-se como referência no segmento de execução de obras de médio e grande porte, além de reformas de alto padrão comerciais e corporativas.
+                Com mais de 15 anos de atuação sólida no mercado, a <strong>Mariano Construtora & Engenharia</strong> consolidou-se como referência no segmento de execução de obras de médio e grande porte, além de reformas de alto padrão comerciais e corporativas em São Paulo e região.
               </p>
               <p>
                 Nossa filosofia operacional baseia-se em rigor técnico absoluto de engenharia, planejamento financeiro com desvio zero de custos, e cumprimento rigoroso de prazos. Contamos com um corpo técnico de engenheiros civis especializados e mão de obra própria constantemente qualificada, garantindo a solidez e sofisticação que o seu patrimônio merece.
@@ -388,6 +400,8 @@ export default function Home() {
             <a href="#galeria">Galeria</a>
           </div>
           <div className="footer-social-section">
+            <h4>Endereço</h4>
+            <p>R. Aguanos, 250 - Jaguaré<br />São Paulo - SP, 05330-000</p>
             <h4>Redes Sociais</h4>
             <a href="https://www.instagram.com/construtoramarianoecia" target="_blank" rel="noreferrer">Instagram</a>
           </div>

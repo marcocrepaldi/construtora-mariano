@@ -10,18 +10,31 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const service = servicesData[resolvedParams.slug];
+  const canonicalUrl = `https://www.construtoramariano.com.br/servicos/${resolvedParams.slug}`;
+
   if (!service) {
     return {
-      title: "Serviço Não Encontrado | Construtora Mariano",
+      title: "Serviço Não Encontrado | Mariano Construtora & Engenharia",
+      description: "Página de serviço não encontrada.",
+      alternates: { canonical: canonicalUrl },
     };
   }
+
   return {
-    title: `${service.title} | Construtora Mariano`,
-    description: service.description,
+    title: `${service.title} | Mariano Construtora & Engenharia`,
+    description: `${service.description} Serviço premium para obras de alto padrão em São Paulo e região.`,
+    keywords: [service.title, "construtora São Paulo", "obra de alto padrão", "engenharia premium"],
+    alternates: { canonical: canonicalUrl },
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
-      title: `${service.title} | Construtora Mariano`,
-      description: service.description,
+      title: `${service.title} | Mariano Construtora & Engenharia`,
+      description: `${service.description} Serviço premium para obras de alto padrão em São Paulo e região.`,
+      url: canonicalUrl,
       images: [service.heroImage],
+      type: "article",
     },
   };
 }
