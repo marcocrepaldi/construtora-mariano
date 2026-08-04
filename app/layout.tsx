@@ -14,7 +14,7 @@ const organizationSchema = {
   logo: "https://www.construtoramariano.com.br/assets/Mariano-Cia-Proposta-de-Logo-2-1024x221.png",
   image: "https://www.construtoramariano.com.br/assets/foto-sobre.jpg",
   description: siteDescription,
-  email: "marianoeciacomercial@gmail.com",
+  email: "comercial.marianoecia@gmail.com",
   telephone: "+55 11 98132-1663",
   address: {
     "@type": "PostalAddress",

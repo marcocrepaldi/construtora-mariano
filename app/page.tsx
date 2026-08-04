@@ -330,8 +330,8 @@ export default function Home() {
                 <span className="contact-icon">✉</span>
                 <h3>E-mail</h3>
                 <p>
-                  <a href="mailto:marianoeciacomercial@gmail.com">
-                    marianoeciacomercial@gmail.com
+                  <a href="mailto:comercial.marianoecia@gmail.com">
+                    comercial.marianoecia@gmail.com
                   </a>
                 </p>
               </article>

@@ -211,7 +211,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                     <span className="detail-icon">✉</span>
                     <div>
                       <h5>E-mail Comercial</h5>
-                      <p>marianoeciacomercial@gmail.com</p>
+                      <p>comercial.marianoecia@gmail.com</p>
                     </div>
                   </div>
                   
